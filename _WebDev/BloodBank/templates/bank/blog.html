@@ -1,0 +1,52 @@
+{% extends "bank/base.html" %}
+{% load static %}
+
+{% block head_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'bank/css/index.css' %}">
+{% endblock %}
+
+
+{% block body_block %}
+<!-- Navigation -->
+<marquee>Next Blood Donation camp at PES UNIVERSITY EC CAMPUS on May 19th, 2021</marquee>
+<div class="jumbotron">
+  <h1>Welcome to the Blog</h1>
+  <div class="card-body">
+    {% if user.is_authenticated %}
+      <h3>Just 1 donation can save up to 3 lives <span class="glyphicon glyphicon-heart"></span></h3>
+      <a href="{% url 'postBlog' %}" class="btn btn-primary"> <span class="glyphicon glyphicon-plus" ></span> Add Post </a>
+
+    {% else %}
+    <h3 class="card-header"> <a href="{% url 'bank:register' %}" class="">Register</a> to become a blood donor </h3>
+
+    {% endif %}
+  </div>
+</div>
+<hr>
+
+{% for blog in blogs %}
+<div class="panel panel-default">
+  <div class="panel-heading"> <h3>{{blog.title}}</h3>
+   <h4 class="text-muted">{{blog.created_at}}</h4> 
+   Author: {{blog.user.username}} 
+   </div>
+  <div class="panel-body">
+    <p class="card-text">{{blog.desc}}</p>
+    {% if blog.blog_img %}
+      <div class="text-center">
+        <img class="img-thumbnail" src="{{blog.blog_img.url}}">
+      </div>
+    {% endif %}
+    <div class="card-footer text-muted">
+
+    </div>
+
+  </div>
+
+</div>
+<hr>
+{% endfor %}
+
+
+{% endblock %}
+{{dest.name}

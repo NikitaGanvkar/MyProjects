@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>BloodLines</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    {% block head_block %}
+    {% endblock %}
+
+  </head>
+  <body>
+
+
+      <nav class="navbar navbar-inverse fixed-top">
+        <div class="container-fluid">
+
+          <ul class="nav navbar-nav">
+            <li><a href="{% url 'index' %}" class="navbar-brand"> <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a></li>
+            <li> <a href="{% url 'bank:new_request' %}"> <span class="glyphicon glyphicon-plus"></span> Make Request</a> </li>
+            <li> <a href="{% url 'blog' %}"> <span class="glyphicon glyphicon-list-alt"></span> Blog</a> </li>
+
+            <!-- Add a link to create requests -->
+            {% if user.is_authenticated %}
+
+              <li><a href="{% url 'bank:request_blood' %}" class="navbar-link"> <span class="glyphicon glyphicon-tint"></span> Requests</a></li>
+
+
+            {% endif %}
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            {% if user.is_authenticated %}
+              <li> <a href="{% url 'logout' %}" class="navbar-link">Hello '{{user.username}}', Logout?</a></li>
+
+            {% else %}
+              <li> <a href="{% url 'bank:user_login' %}"> <span class="glyphicon glyphicon-log-in"> </span> Login</a></li>
+              <li><a href="{% url 'bank:register' %}" class="navbar-link"> <span class="glyphicon glyphicon-user"></span>Register</a></li>
+              <li><a href="{% url 'admin:index' %}" class="navbar-link">  <span class="glyphicon glyphicon-lock"></span> Admin</a></li>
+            {% endif %}
+
+
+          </ul>
+        </div>
+      </nav>
+
+
+
+
+      <div class="container">
+      <div class="alert alert-danger text-center">If you think you have been exposed to novel coronavirus <strong>(COVID-19)</strong>, and have developed any symptoms (cough, fever or difficulty breathing), call the Govt. of India helpline 1075 or the state helpline numbers for assistance.
+      </div>
+
+
+      {% block body_block %}
+
+
+      {% endblock %}
+    </div>
+
+
+
+
+  </body>
+
+
+  <footer class="page-footer footer ">
+
+  <!-- Copyright -->
+  <div class="text-center">© 2020 Copyright:
+      <a href="https://github.com/aswinanilnair/BloodLines"> <i class="fa fa-github" style="font-size:24px"></i> </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+</html>

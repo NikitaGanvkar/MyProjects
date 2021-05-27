@@ -1,0 +1,33 @@
+{% extends 'bank/base.html' %}
+{% load static %}
+
+{% block head_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'bank/css/index.css' %}">
+{% endblock %}
+
+{% block body_block%}
+<div class="card">
+  <div class="card-header">
+    <h3>REQUESTS:</h3>
+  </div>
+    {% for req in reqs %}
+      <div class="panel panel-default">
+        <div class="panel-heading"> <h3>{{ req.title}}</h3> <h5>{{ req.name }}</h5></div>
+        <div class="panel-body">
+          <p class="card-text">{{ req.msg }}</p>
+          <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{req.id}}">Contact Patient</button>
+          {% if user.is_staff %}
+          <button type="button" class="btn btn-default"> <a href="{% url 'bank:delete_req' req.id %}">Delete</a> </button>
+          {% endif %}
+          <div id="{{req.id}}" class="collapse">
+            <br>
+            <p>Name: {{req.name}}</p>
+            <p> Contact No: {{req.phone}} </p>
+            <p> Email: {{req.email}} </p>
+            <p> City: {{req.city}} </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

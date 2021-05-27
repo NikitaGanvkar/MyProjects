@@ -1,0 +1,25 @@
+{% extends "bank/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block head_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'bank/css/index.css' %}">
+{% endblock %}
+
+
+{% block body_block %}
+
+<div class="jumbotron">
+  <h1>Add New Request</h1>
+  <h3>to get help from our verified donors..</h3>
+<br>
+  <div class="container">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ req_form|crispy}}
+      <input type="submit" class="btn btn-primary" value="Make Request">
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,193 @@
+{% extends 'bank/base.html' %}
+{% load static %}
+
+{% block head_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'bank/css/index.css' %}">
+{% endblock %}
+
+
+{% block body_block %}
+
+<div class="main-bg">
+  <div class="jumbotron">
+    <h1 align="center">BloodLines</h1>
+    <h3 align="center"> Your Online Blood Bank. </h3>
+  </div>
+
+  {% if user.is_authenticated %}
+  <div class="n">
+      <h1>
+          <b>How to Donate blood? </b>
+      </h1>
+
+      <hr>
+
+        <h3>
+          <p>Thank you for your humanitarian gesture to donate blood.</p>
+        </h3>
+
+        <h3>
+          <p>You may please visit a Clinical Laboratory center and identify your blood group. </p>
+        </h3>
+
+        <h3>
+          <p>The clinical test will cost you close to $1.
+          The result shall be provided within 2 hours time.In case you wish to donate blood now, please visit your nearest Blood Collection Center.
+          Alternatively you may use the Registration Form given here in the website and submit for registration.
+          Recipient, relatives or Hospital authorities will contact you directly. </p>
+        </h3>
+
+  </div>
+
+  <br>
+
+
+  <div class="n">
+      <h1>
+          <b>Things to know before you donate blood:</b>
+      </h1>
+      <hr>
+      <br>
+      <h2>
+          <p>To be eligible to donate whole blood, plasma or platelets, you must be:</p>
+      </h2>
+
+      <h3>
+          <ul type="square">
+              <li>
+                  <p>In good health.</p>
+              </li>
+              <li>
+                  <p>At least 18 years old.</p>
+              </li>
+              <li>
+                  <p>At least 110 pounds.</p>
+              </li>
+              <li>
+                  <p>Able to pass the physical and health-history assessments.</p>
+              </li>
+              <li>
+                  <p>Eligibility requirements differ slightly between different types of blood donation, and
+                      from center to center. Check with your local donor center for specifics.</p>
+              </li>
+          </ul>
+      </h3>
+
+      <hr>
+      <br>
+
+      <h2>
+          <p> Before your blood donation:</p>
+      </h2>
+
+      <h3>
+          <ul type="square">
+              <li>
+                  <p> Get plenty of sleep the night before you plan to donate.</p>
+              </li>
+              <li>
+                  <p> Eat a healthy meal before your donation..</p>
+              </li>
+              <li>
+                  <p>Avoid fatty foods, such as hamburgers, french fries or ice cream before donating. Tests
+                      for infections done on all donated blood can be affected by fats that appear in your
+                      blood for several hours after eating fatty foods.</p>
+              </li>
+              <li>
+                  <p>Drink an extra 16 ounces (473 milliliters) of water and other fluids before the donation.</p>
+              </li>
+          </ul>
+      </h3>
+
+      <hr>
+      <br>
+      <h2>
+          <p> After your blood donation:</p>
+      </h2>
+      <h3>
+          <ul type="square">
+              <li>
+                  <p> Drink extra fluids for the next day or two.</p>
+              </li>
+              <li>
+                  <p> Avoid strenuous physical activity or heavy lifting for the next five hours.</p>
+              </li>
+              <li>
+                  <p>If you feel lightheaded, lie down with your feet up until the feeling passes.</p>
+              </li>
+              <li>
+                  <p> Keep the bandage on your arm and dry for five hours.</p>
+              </li>
+              <li>
+                  <p> If you have bleeding after removing the bandage, put pressure on the site and raise your
+                      arm until the bleeding stops.</p>
+              </li>
+              <li>
+                  <p> If bleeding or bruising occurs under the skin, apply a cold pack to the area periodically
+                      during the first 24 hours.</p>
+              </li>
+          </ul>
+      </h3>
+
+      <hr>
+      <br>
+  </div>
+  
+
+  {% else %}
+  <div class="container">
+    <div class="container">
+      <br>
+      <h2>
+          <p> Health Benefits Of Donating Blood:</p>
+      </h2>
+      <h3>
+          <ul type="square">
+              <li>
+                  <p> Blood donation not only makes the receiver’s life good but also helps the donor to maintain good health. The health benefits of donating blood are mentioned below.
+  </p>
+              </li>
+              <li>
+                  <p> PREVENTS HEMOCHROMATOSIS:
+                  Health benefits of blood donation include reduced risk of hemochromatosis. Hemochromatosis is a health condition that arises due to excess absorption of iron by the body. This may be inherited or may be caused due to alcoholism, anemia or other disorders. Regular blood donation may help in reducing iron overload. Make sure that the donor meets the standard blood donation eligibility criteria.
+  </p>
+              </li>
+              <li>
+                  <p>ANTI-CANCER BENEFITS:
+                  Blood donation helps in lowering the risk of cancer. By donating blood the iron stores in the body are maintained at healthy levels. A reduction in the iron level in the body is linked with low cancer risk.
+  </p>
+              </li>
+              <li>
+                  <p> MAINTAINS HEALTHY HEART & LIVER:
+                  Blood donation is beneficial in reducing the risk of heart and liver ailments caused by the iron overload in the body. Intake of iron-rich diet may increase the iron levels in the body, and since only limited proportions can be absorbed, excess iron gets stored in heart, liver, and pancreas. This, in turn, increases the risk of cirrhosis, liver failure, damage to the pancreas, and heart abnormalities like irregular heart rhythms. Blood donation helps in maintaining the iron levels and reduces the risk of various health ailments.</p>
+              </li>
+              <li>
+                  <p> WEIGHT LOSS:
+                  Regular blood donation reduces the weight of the donors. This is helpful to those who are obese and are at higher risk of cardiovascular diseases and other health disorders. However, blood donation should not be very frequent and you may consult your doctor before donating blood to avoid any health issues.
+  </p>
+              </li>
+              <li>
+                  <p> STIMULATES BLOOD CELL PRODUCTION:
+                  After donating blood, the body works to replenish the blood loss. This stimulates the production of new blood cells and in turn, helps in maintaining good health.
+  </p>
+              </li>
+          </ul>
+      </h3>
+
+      <hr>
+      <br>
+
+    </div>
+
+  </div>
+
+
+  {% endif %}
+
+
+
+
+
+
+</div>
+{% endblock %}

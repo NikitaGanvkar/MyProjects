@@ -1,0 +1,33 @@
+{% extends 'bank/base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block head_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'bank/css/index.css' %}">
+{% endblock %}
+
+{% block body_block %}
+<div class="jumbotron">
+
+  {% if registered %}
+    <h1>Thank You for posting!</h1>
+  {% else %}
+    <h1> Add a new post</h1>
+    <h5> to show up on our blog page: </h5>
+
+
+    <form  method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        {% csrf_token %}
+      </div>
+      <div class="form-group">
+        {{ blog_form|crispy }}
+      </div>
+
+      <input type="submit" class="btn btn-primary" value="Post">
+    </form>
+
+
+  {% endif %}
+</div>
+{% endblock %}

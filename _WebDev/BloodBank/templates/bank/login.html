@@ -1,0 +1,43 @@
+{% extends 'bank/base.html' %}
+{% load static %}
+
+{% block head_block %}
+<link rel="stylesheet" type="text/css" href="{% static 'bank/css/index.css' %}">
+{% endblock %}
+
+{% block body_block %}
+
+{% if user.is_authenticated %}
+<div class="jumbotron">
+  <h2>Hey you are logged in as {{user.username}}  <span class="glyphicon glyphicon-exclamation-sign" ></span></h2>
+  <h5>Want to <a href="{% url 'logout' %}">sign out</a>?</h5>
+</div>
+{% else %}
+<div class="jumbotron">
+  <h1>Welcome to the Login Page</h1>
+  <h5>Login to Continue...</h5>
+<br>
+  <div class="">
+    <form action="{% url 'bank:user_login' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group ">
+        <label for="username">UserName:</label>
+        <input id="username" name="username" type="text" class="form-control"  placeholder="Email">
+    </div>
+    <div class="form-group ">
+        <label for="password">Password:</label>
+        <input id="password"  name="password" type="password" class="form-control"  placeholder="Password">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary col-lg-1">Sign in</button>
+        <!-- <label class="form-check-label"><input type="checkbox"> Remember me</label>  --> 
+    </div> 
+    
+    </form>
+  </div>
+
+</div>
+{% endif %}
+
+
+{% endblock %}

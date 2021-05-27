@@ -1,0 +1,31 @@
+h1{
+     text-decoration: underline;
+     background: url();
+}
+
+body{
+     background: url('/static/bank/images/bg_4.jpg') 50% 0 no-repeat fixed;
+     /* color:rgb(255, 0, 102); */
+     height: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: rgb(255, 26, 117);
+     color: white;
+     text-align: center;
+     font-size: 20px;
+   }
+   
+   .jumbotron{
+	background-image: url('/static/bank/images/bg_3.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+} 
+  
