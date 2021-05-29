@@ -3,7 +3,7 @@ export const DISHES =
         {
             id: 0,
             name: 'Pizza',
-            image: '/assets/images/uthappizza.png',
+            image: '/assets/images/pizza.png',
             category: 'mains',
             label: 'Hot',
             price: '4.99',
@@ -13,7 +13,7 @@ export const DISHES =
         {
             id: 1,
             name: 'Onion Rings',
-            image: '/assets/images/zucchipakoda.png',
+            image: '/assets/images/onionrings.png',
             category: 'appetizer',
             label: '',
             price: '1.99',
@@ -23,7 +23,7 @@ export const DISHES =
         {
             id: 2,
             name: 'Garlic Bread',
-            image: '/assets/images/vadonut.png',
+            image: '/assets/images/garlicbread.png',
             category: 'appetizer',
             label: 'New',
             price: '1.99',
@@ -33,7 +33,7 @@ export const DISHES =
         {
             id: 3,
             name: 'Cheesecake',
-            image: '/assets/images/elaicheesecake.png',
+            image: '/assets/images/cheesecake.png',
             category: 'dessert',
             label: '',
             price: '2.99',
